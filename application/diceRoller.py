@@ -1,4 +1,10 @@
 import random
+
+min = 1
+max = 50
+
+print random.randint(min,max)
+
 import time
 
 random.seed(time.time())
@@ -11,3 +17,4 @@ def d10():
 
 
 d10()
+
