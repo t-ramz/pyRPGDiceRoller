@@ -1,7 +1,7 @@
 import random
 
 min = 1
-max = 50
+max = 8
 
 print random.randint(min,max)
 
