@@ -1,11 +1,11 @@
 import random
+import time
 
 min = 1
 max = 8
 
-print random.randint(min,max)
+print random.randint(min, max)
 
-import time
 
 random.seed(time.time())
 
@@ -17,4 +17,3 @@ def d10():
 
 
 d10()
-
