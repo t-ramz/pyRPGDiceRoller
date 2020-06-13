@@ -26,7 +26,6 @@ def d12():
 
 
 # D10 code
-
 def d10():
     print(random.randint(1, 10))
 
