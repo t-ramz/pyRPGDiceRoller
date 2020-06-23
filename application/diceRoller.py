@@ -50,11 +50,34 @@ def d100():
     print(random.randint(1, 100))
 
 
-d4()
-d6()
-d8()
-d10()
-d12()
-d20()
-DVirgil()
-d100()
+def main():
+    dieChoice = input("Please enter the die you would like to roll: d")
+    numberChoice = input("Please enter how many you would like to roll: ")
+    if dieChoice == 4:
+        for x in numberChoice:
+            d4()
+    elif dieChoice == 6:
+        for x in numberChoice:
+            d6()
+    elif dieChoice == 8:
+        for x in numberChoice:
+            d8()
+    elif dieChoice == 10:
+        for x in numberChoice:
+            d10()
+    elif dieChoice == 12:
+        for x in numberChoice:
+            d12()
+    elif dieChoice == 20:
+        for x in numberChoice:
+            d20()
+    elif dieChoice == 50:
+        for x in numberChoice:
+            DVirgil()
+    elif dieChoice == 100:
+        for x in numberChoice:
+            d100()
+    else:
+        print("Nah bro")
+
+main()
