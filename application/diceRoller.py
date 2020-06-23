@@ -53,7 +53,6 @@ def d100():
 def main():
     dieChoice = int(input("Please enter the die you would like to roll: d"))
     numberChoice = int(input("Please enter how many you would like to roll: ")) + 1
-    
     if dieChoice == 4:
         for x in range(1, numberChoice):
             d4()
@@ -80,6 +79,8 @@ def main():
             d100()
     else:
         print("Nah bro")
+
+        print("OOP")
 
 
 main()
