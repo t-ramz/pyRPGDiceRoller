@@ -50,7 +50,11 @@ def d100():
     print(random.randint(1, 100))
 
 
+d4()
+d6()
 d8()
 d10()
 d12()
+d20()
 DVirgil()
+d100()
