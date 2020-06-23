@@ -53,28 +53,28 @@ def d100():
 def main():
     dieChoice = input("Please enter the die you would like to roll: d")
     numberChoice = input("Please enter how many you would like to roll: ")
-    if dieChoice == 4:
+    if int(dieChoice) == 4:
         for x in numberChoice:
             d4()
-    elif dieChoice == 6:
+    elif int(dieChoice) == 6:
         for x in numberChoice:
             d6()
-    elif dieChoice == 8:
+    elif int(dieChoice) == 8:
         for x in numberChoice:
             d8()
-    elif dieChoice == 10:
+    elif int(dieChoice) == 10:
         for x in numberChoice:
             d10()
-    elif dieChoice == 12:
+    elif int(dieChoice) == 12:
         for x in numberChoice:
             d12()
-    elif dieChoice == 20:
+    elif int(dieChoice) == 20:
         for x in numberChoice:
             d20()
-    elif dieChoice == 50:
+    elif int(dieChoice) == 50:
         for x in numberChoice:
             DVirgil()
-    elif dieChoice == 100:
+    elif int(dieChoice) == 100:
         for x in numberChoice:
             d100()
     else:
