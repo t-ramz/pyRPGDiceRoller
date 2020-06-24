@@ -1,86 +1,42 @@
 import random
+import re
 
 
-def d8():
-    '''this will print the roll of a d8'''
-    min = 1
-    max = 8
+class Dice():
+    def __init__(self, max):
+        self.max = max
 
-    print(random.randint(min, max))
-
-
-def DVirgil():
-    '''this will print the roll of a d50'''
-    min = 1
-    max = 50
-
-    print(random.randint(min, max))
-
-
-def d12():
-    '''this will print the roll of a d12'''
-    min = 1
-    max = 12
-
-    print(random.randint(min, max))
-
-
-def d10():
-    '''this will print the roll of a d10'''
-    print(random.randint(1, 10))
-
-
-def d4():
-    '''this will print the roll of a d4'''
-    print(random.randint(1, 4))
-
-
-def d6():
-    '''this will print the roll of a d6'''
-    print(random.randint(1, 6))
-
-
-def d20():
-    '''this will print the roll of a d20'''
-    print(random.randint(1, 20))
-
-
-def d100():
-    '''this will print the roll of a d100'''
-    print(random.randint(1, 100))
+    def Roll(self):
+        print(random.randint(1, self.max))
 
 
 def main():
-    dieChoice = int(input("Please enter the die you would like to roll: d"))
-    numberChoice = int(input("Please enter how many you would like to roll: ")) + 1
-    if dieChoice == 4:
-        for x in range(1, numberChoice):
-            d4()
-    elif dieChoice == 6:
-        for x in range(1, numberChoice):
-            d6()
-    elif dieChoice == 8:
-        for x in range(1, numberChoice):
-            d8()
-    elif dieChoice == 10:
-        for x in range(1, numberChoice):
-            d10()
-    elif dieChoice == 12:
-        for x in range(1, numberChoice):
-            d12()
-    elif dieChoice == 20:
-        for x in range(1, numberChoice):
-            d20()
-    elif dieChoice == 50:
-        for x in range(1, numberChoice):
-            DVirgil()
-    elif dieChoice == 100:
-        for x in range(1, numberChoice):
-            d100()
+    '''Regex for matching proper command string'''
+    command = re.compile(r"\/roll\s+[0-9]+d[0-9]+$")
+
+    '''Regex for extractring valuable information from input string'''
+    subtract = re.compile(r"\/roll\s+")
+
+    ''''Prompt for the command'''
+    print("Type commmand to roll dice.")
+    print("Ex: /roll 3d10")
+    inputString = input()
+
+    if command.match(inputString):
+        '''Extract information from input string'''
+        subString = re.sub((subtract), '', inputString)
+
+        '''Categorize valuable information'''
+        splitString = subString.split("d")
+        numToRoll = int(subString[0])
+        dice = Dice(int(splitString[1]))
+
+        '''Execute the command'''
+        for i in range(numToRoll):
+            dice.Roll()
     else:
-        print("Nah bro")
-
-        print("OOP")
+        print("Command not found")
 
 
-main()
+if __name__ == '__main__':
+    main()
